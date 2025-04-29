@@ -33,8 +33,10 @@ nav{
 }
 nav .web-logo i{
     color: var(--main-color);
+    font-size: 40px;
+    margin-right: 5px;
 }
-nav .web-logo a{
+nav .web-logo a span{
     font-weight: 800;
 }
 nav .nav-ul li a{
@@ -55,6 +57,17 @@ nav ul li .log{
 nav ul li .log:hover{
     background-color:#b23507;
 }
+@media (max-width:1200px) {
+    nav ul li .get{
+        display: none;
+    }
+}
+@media (max-width:960px){
+    nav .web-logo a span{
+        display: none;
+    }
+}
+
 nav ul .points{
     background-color: transparent;
     border-radius: 50%;
