@@ -30,6 +30,7 @@ nav{
     padding: 5px 10px;
     border-bottom: 2px solid var(--foucs-color);
     position: relative;
+    
 }
 nav .web-logo i{
     color: var(--main-color);
@@ -131,3 +132,14 @@ nav ul .points:hover .menu-box{
     top:100%
 }
 
+
+
+.content-sidebar .sidebar{
+    background-color: transparent;
+    border-right: 3px solid var(--foucs-color);
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
