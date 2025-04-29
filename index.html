@@ -4,12 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+  <nav class="d-flex align-content-center align-items-center justify-content-center ">
+    <div class="web-logo col-4 fs-3">
+      <a class="fs-2" href=""><i class="fa-brands fa-square-reddit"></i> Raddit</a>
+    </div>
+    <form class=" col-4" role="search ">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    <ul class=" nav-ul d-flex my-1 col-4 text-capitalize justify-content-end align-content-center align-items-center">
+      <li ><a class="get mx-1" href=""><i class="fa-solid fa-qrcode mx-2"></i>get app</a></li>
+      <li ><a class="log mx-1" href="">log in</a></li>
+      <li class="points ">
+        <a class="d-flex justify-content-center align-items-center" href="#">
+          <span >.</span>
+        <span>.</span>
+        <span>.</span>
+        </a>
+        <div class="menu-box">
+          <ul class="d-flex flex-column gap-2 justify-content-evenly ">
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket mx-2"></i>section1</a></li>
+            <li><a href="#"><i class="fa-solid fa-chart-simple mx-2"></i>section2</a></li>
+            <li><a href="#"><i class="fa-solid fa-user mx-2"></i>section3</a></li>
+            <li><a href="#"><i class="fa-solid fa-basket-shopping mx-2"></i>section4</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/test.js"></script>
 </body>
