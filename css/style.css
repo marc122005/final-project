@@ -23,6 +23,7 @@ a {
     text-decoration: none;
     color: white;
 }
+
 nav {
     background-color: var(--background-color);
     width: 100%;
@@ -65,13 +66,13 @@ nav ul li .log:hover {
     background-color: #b23507;
 }
 
-@media (max-width:635px) {
+@media (max-width: 635px) {
     nav .nav-ul li a {
         padding: 5px;
     }
 }
 
-@media (max-width:540px) {
+@media (max-width: 540px) {
     nav .nav-ul li a {
         padding: px;
     }
@@ -224,20 +225,20 @@ nav ul .points .menu-box li a:hover {
 
 .accordion .accordion-item .collapseOne {
     border-left: 2px solid var(--foucs-color);
-
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
     .sid-smal {
         display: none;
     }
 }
 
-@media (max-width:1200px) {
+@media (max-width: 1200px) {
     .sidebar-content .sidebar {
         display: none;
     }
 }
-.sidebar-content .content{
+
+.sidebar-content .content {
     z-index: -3;
 }
