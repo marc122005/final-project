@@ -84,6 +84,9 @@ nav ul li .log:hover {
     .sid-smal{
         width: 35px;
     }
+    nav .web-logo i{
+        font-size: 30px;
+    }
 }
 @media (max-width: 1200px) {
     nav ul li .get {
