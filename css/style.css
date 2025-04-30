@@ -79,10 +79,13 @@ nav ul li .log:hover {
         padding: px;
     }
     nav .form-control{
-        width: 150px;
+        width: 100px;
     }
     .sid-smal{
         width: 35px;
+    }
+    nav .web-logo i{
+        font-size: 30px;
     }
 }
 @media (max-width: 1200px) {
