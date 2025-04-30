@@ -191,3 +191,16 @@ nav ul .points .menu-box li a:hover {
 .content {
     padding: 20px;
 }
+.sidebar .accordion .accordion-item{
+    background-color: transparent;
+    border: none;
+}
+.sidebar .accordion .accordion-item .accordion-button{
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+.sidebar .accordion .accordion-item .collapseOne{
+    border-left: 2px solid var(--foucs-color);
+    
+}
