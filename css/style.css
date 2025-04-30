@@ -3,7 +3,7 @@
     --foucs-color: #2a3236;
     --hover-color: #181c1f;
     --main-color: #ff4500;
-    --main-font:"Alegreya Sans", serif; 
+    --main-font: "Alegreya Sans", serif;
 }
 
 * {
@@ -71,25 +71,31 @@ nav ul li .log {
 nav ul li .log:hover {
     background-color: #b23507;
 }
-@media (max-width:635px){
-    nav .nav-ul li a{
+
+@media (max-width:635px) {
+    nav .nav-ul li a {
         padding: 5px;
     }
 }
-@media (max-width:540px){
-    nav .nav-ul li a{
+
+@media (max-width:540px) {
+    nav .nav-ul li a {
         padding: px;
     }
-    nav .form-control{
+
+    nav .form-control {
         width: 100px;
     }
-    .sid-smal{
+
+    .sid-smal {
         width: 35px;
     }
-    nav .web-logo i{
+
+    nav .web-logo i {
         font-size: 30px;
     }
 }
+
 @media (max-width: 1200px) {
     nav ul li .get {
         display: none;
@@ -211,26 +217,31 @@ nav ul .points .menu-box li a:hover {
 .content {
     padding: 20px;
 }
-.sidebar .accordion .accordion-item{
+
+.accordion .accordion-item {
     background-color: transparent;
     border: none;
 }
-.sidebar .accordion .accordion-item .accordion-button{
+
+.accordion .accordion-item .accordion-button {
     background-color: transparent;
     color: white;
     border: none;
 }
-.sidebar .accordion .accordion-item .collapseOne{
+
+.accordion .accordion-item .collapseOne {
     border-left: 2px solid var(--foucs-color);
-    
+
 }
-@media (min-width:1200px){
-    .sid-smal{
+
+@media (min-width:1200px) {
+    .sid-smal {
         display: none;
     }
 }
-@media (max-width:1200px){
-    .sidebar-content .sidebar{
-    display: none;
+
+@media (max-width:1200px) {
+    .sidebar-content .sidebar {
+        display: none;
     }
 }
