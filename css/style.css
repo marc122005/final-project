@@ -232,7 +232,7 @@ nav ul .points .menu-box li a:hover {
 .sidebar-content .content {
     z-index: -3;
     width: 100%;
-    background-color: var(--foucs-color);
+    background-color: var(--hover-color);
     margin-left: 250px;
     height: 500vh;
 }
