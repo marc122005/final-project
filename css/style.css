@@ -30,7 +30,8 @@ nav {
     height: 60px;
     padding: 5px 10px;
     border-bottom: 2px solid var(--foucs-color);
-    position: relative;
+    position: fixed;
+    z-index: 3;
 }
 
 nav .web-logo i {
@@ -193,6 +194,7 @@ nav ul .points .menu-box li a:hover {
     padding: 20px;
     box-sizing: border-box;
     border-right: 2px solid var(--foucs-color);
+    position: fixed;
 }
 
 .menu-item {
@@ -227,6 +229,14 @@ nav ul .points .menu-box li a:hover {
     border-left: 2px solid var(--foucs-color);
 }
 
+.sidebar-content .content {
+    z-index: -3;
+    width: 100%;
+    background-color: var(--foucs-color);
+    margin-left: 250px;
+    height: 500vh;
+}
+
 @media (min-width: 1200px) {
     .sid-smal {
         display: none;
@@ -237,8 +247,9 @@ nav ul .points .menu-box li a:hover {
     .sidebar-content .sidebar {
         display: none;
     }
-}
+    .sidebar-content .content{
+        width: 100%;
+        margin-left: 0;
+    }
 
-.sidebar-content .content {
-    z-index: -3;
 }
