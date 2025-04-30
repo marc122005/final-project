@@ -245,3 +245,6 @@ nav ul .points .menu-box li a:hover {
         display: none;
     }
 }
+.sidebar-content .content{
+    z-index: -3;
+}
