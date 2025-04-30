@@ -11,15 +11,19 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('img.jpg') ;
+    background-image: url('img.jpg');
+
     background-repeat: no-repeat;
     background-size: cover; 
     background-position: center;
 }
 .login{
     width: 420px;
-    background: purple;
-    color: rgb(2, 57, 105);
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    color: rgb(216, 216, 216);
     border-radius: 20px;
     padding: 30px 40px ;
 
