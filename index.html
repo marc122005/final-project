@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Winkly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -21,13 +22,57 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            
+            <div class="menu-item"><a href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
+            <div class="menu-item"><a href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
+            <hr>
+            <div class="menu-item">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button border-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Games
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetow" aria-expanded="false" aria-controls="collapsetow">
+                      Memes
+                    </button>
+                  </h2>
+                  <div id="collapsetow" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
+                      <div class="menu-item"><a href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>        
           </div>
         </div>
       </div>
     </nav>
     <div class="web-logo col-lg-2 col-md-2  col-sm-2 ">
-      <a class="fs-2" href=""><i class="fa-brands fa-square-reddit"></i><span>Raddit</span> </a>
+      <a class="fs-2" href=""><i class="fa-brands fa-square-reddit"></i><span>Winkly</span> </a>
     </div>
     <form class=" col-lg-4 col-md-4  col-sm-5" role="search ">
       <i class="fa-solid fa-magnifying-glass"></i>
@@ -63,8 +108,8 @@
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button border-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Games
+            <button class="accordion-button fs-5 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <i class="fa-solid fa-gamepad mx-2"></i>Games
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -80,12 +125,13 @@
         </div>
       </div>
     </div>
+    <hr>
     <div class="menu-item">
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetow" aria-expanded="false" aria-controls="collapsetow">
-              Memes
+            <button class="accordion-button collapsed fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetow" aria-expanded="false" aria-controls="collapsetow">
+              <i class="fa-solid fa-face-smile-wink mx-2"></i>Memes
             </button>
           </h2>
           <div id="collapsetow" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
@@ -101,7 +147,7 @@
         </div>
       </div>
     </div>
-    
+    <hr>
   </div>
 
   <div class="content">
