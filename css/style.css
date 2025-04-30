@@ -75,9 +75,14 @@ nav ul li .log:hover {
     }
 }
 @media (max-width:540px){
-    
+    nav .nav-ul li a{
+        padding: px;
+    }
     nav .form-control{
-        width: 100px;
+        width: 150px;
+    }
+    .sid-smal{
+        width: 35px;
     }
 }
 @media (max-width: 1200px) {
