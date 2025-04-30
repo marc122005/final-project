@@ -9,17 +9,32 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <nav class="d-flex align-content-center align-items-center justify-content-center ">
-    <div class="web-logo col-lg-4 col-sm-2">
+  <nav class="d-flex align-content-center align-items-center justify-content-between ">
+    <nav class="navbar sid-smal w-25 col-lg-2 col-md-2 col-sm-2  navbar-dark  ">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="web-logo col-lg-2 col-md-2  col-sm-2 ">
       <a class="fs-2" href=""><i class="fa-brands fa-square-reddit"></i><span>Raddit</span> </a>
     </div>
-    <form class=" col-lg-4 col-sm-5" role="search ">
+    <form class=" col-lg-4 col-md-4  col-sm-5" role="search ">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </form>
-    <ul class=" nav-ul d-flex my-1 col-lg-4 col-sm-5 text-capitalize justify-content-end align-content-center align-items-center">
+    <ul class=" nav-ul d-flex my-1 col-lg-4 col-md-4 col-sm-3 text-capitalize justify-content-end align-content-center align-items-center">
       <li ><a class="get mx-1" href=""><i class="fa-solid fa-qrcode mx-2"></i>get app</a></li>
-      <li ><a class="log mx-1" href="">log in</a></li>
+      <li ><a class="log mx-1" href="login.html">log in</a></li>
       <li class="points ">
         <a class="d-flex justify-content-center align-items-center" href="#">
           <span >.</span>

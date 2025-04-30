@@ -69,7 +69,17 @@ nav ul li .log {
 nav ul li .log:hover {
     background-color: #b23507;
 }
-
+@media (max-width:635px){
+    nav .nav-ul li a{
+        padding: 5px;
+    }
+}
+@media (max-width:540px){
+    
+    nav .form-control{
+        width: 100px;
+    }
+}
 @media (max-width: 1200px) {
     nav ul li .get {
         display: none;
@@ -203,4 +213,14 @@ nav ul .points .menu-box li a:hover {
 .sidebar .accordion .accordion-item .collapseOne{
     border-left: 2px solid var(--foucs-color);
     
+}
+@media (min-width:1200px){
+    .sid-smal{
+        display: none;
+    }
+}
+@media (max-width:1200px){
+    .sidebar-content .sidebar{
+    display: none;
+    }
 }
