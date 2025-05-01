@@ -1,0 +1,126 @@
+
+  :root {
+    --background-color: #0e1113;
+    --focus-color: #2a3236;
+    --hover-color: #181c1f;
+    --main-color: #ff4500;
+    --main-font: "Alegreya Sans", serif;
+    --input-bg: rgb(27, 27, 45);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --button-bg: #ff4500;
+    --button-hover-bg: #e03e00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../img/img5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #d8d8d8;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.forget {
+    width: 420px;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 15px var(--shadow-color);
+    color: var(--main-color);
+    border-radius: 20px;
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.forget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.forget h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: var(--main-font), sans-serif;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: var(--input-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box input:focus {
+    border-color: var(--main-color);
+    background: var(--focus-color);
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #fff;
+}
+
+.need-help {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 20px;
+}
+
+.need-help a {
+    color: #ff4500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.need-help a:hover {
+    color: #e03e00;
+}
+
+.nots p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #ff4500;
+    font-weight: bold;
+}
