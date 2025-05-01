@@ -1,0 +1,131 @@
+
+:root {
+    --background-color: #0e1113;
+    --focus-color: #2a3236;
+    --hover-color: #181c1f;
+    --main-color: #ff4500;
+    --main-font: "Alegreya Sans", serif;
+    --input-bg: rgb(27, 27, 45);
+    --border-color: rgba(255, 255, 255, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --text-color: #d8d8d8;
+    --heading-color: #fff;
+    --sub-heading-color: #ff7f24;
+    --link-hover-color: #ff7f24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../img/img5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+
+.help-content h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: var(--main-font), sans-serif;
+    color: var(--heading-color);
+}
+
+h2 {
+    font-size: 28px;
+    color: var(--main-color);
+    margin-bottom: 15px;
+    font-family: var(--main-font), sans-serif;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p, ul li {
+        font-size: 14px;
+    }
+}
