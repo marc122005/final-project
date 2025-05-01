@@ -1,0 +1,86 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #1e003e, #000000);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .app-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .app-card {
+    background-color: #2a0057;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+    transition: transform 0.3s ease;
+  }
+  
+  .app-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .app-card h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #d0aaff;
+  }
+  
+  .app-card p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+  }
+  
+  .download-btn {
+    display: inline-block;
+    background: #8000ff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(128, 0, 255, 0.4);
+  }
+  
+  .download-btn:hover {
+    background: #5d00b3;
+    transform: scale(1.05);
+  }
+  
+  .download-btn i {
+    margin-right: 8px;
+  }
+  
+  .download-btn.ios {
+    background: #4b0082;
+  }
+  
+  .footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #bbb;
+  }
+  
