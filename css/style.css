@@ -256,6 +256,9 @@ nav ul .points .menu-box li a:hover {
 
 }
 
+
+/*poste */
+
 .post-container {
     background-color: var(--background-color);
     width: 800px;
@@ -263,17 +266,20 @@ nav ul .points .menu-box li a:hover {
     padding: 16px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     margin-top: 40px;
-
 }
-
-.post-container:hover {
-    background-color: var(--foucs-color);
+.post-container:hover{
+    background-color: var(--hover-color);
 }
-
 .post-header a {
     font-size: 14px;
     color: #aaa;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
+}
+.post-header a img{
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 .post-title {
@@ -304,12 +310,6 @@ nav ul .points .menu-box li a:hover {
     padding: 5px;
     transition: color 0.2s;
 }
-
-.post-actions .action:hover {
-    color: white;
-    background-color: var(--hover-color);
-}
-
 
 /* Chat Toggle Button */
 #chatToggle {
@@ -351,6 +351,36 @@ nav ul .points .menu-box li a:hover {
 }
 #chatInputArea {
     display: flex;
-    border-top: 1px solid #ccc;
     background-color: var(--foucs-color);
+}
+
+.chat-sidebar form input{
+    background-color: var(--hover-color);
+    border: none;
+    width: 300px;
+    height: 40px;
+    margin-left: 10px;
+    position: absolute;
+    bottom: 20px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.chat-sidebar form button {
+    position: absolute;
+    bottom: 20px ;
+    width: 70px;
+    height: 40px;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    right: 20px;
+}
+.chat-sidebar .messagearea{
+    width: 90%;
+    height: 420px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    
+    background-color: var(--hover-color);
 }
