@@ -1,0 +1,45 @@
+<div class="mt-3">
+    <button id="blockBtn" class="btn btn-danger me-2">Block</button>
+    <button class="btn btn-warning" onclick="document.getElementById('reportForm').style.display='block'">Report</button>
+  </div>
+  
+  <div id="reportForm" style="display:none;" class="mt-3">
+    <select id="reportReason" class="form-select mb-2">
+      <option value="">Select Reason</option>
+      <option value="spam">Spam</option>
+      <option value="harassment">Harassment</option>
+      <option value="hate">Hate Speech</option>
+    </select>
+    <button class="btn btn-outline-primary" onclick="submitReport()">Submit Report</button>
+  </div>
+  
+  <script>
+  const targetUserId = '123'; // Replace with actual user ID
+  const blockBtn = document.getElementById('blockBtn');
+  let isBlocked = false;
+  
+  blockBtn.addEventListener('click', () => {
+    const method = isBlocked ? 'DELETE' : 'POST';
+    fetch(`/api/user/${targetUserId}/block`, { method })
+      .then(() => {
+        isBlocked = !isBlocked;
+        blockBtn.textContent = isBlocked ? 'Unblock' : 'Block';
+        blockBtn.className = isBlocked ? 'btn btn-outline-danger me-2' : 'btn btn-danger me-2';
+      });
+  });
+  
+  function submitReport() {
+    const reason = document.getElementById('reportReason').value;
+    if (!reason) return alert("Please select a reason.");
+    fetch(`/api/user/${targetUserId}/report`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ reason })
+    }).then(() => {
+      alert("User reported.");
+      document.getElementById('reportForm').style.display = 'none';
+      document.getElementById('reportReason').value = '';
+    });
+  }
+  </script>
+  

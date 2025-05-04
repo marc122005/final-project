@@ -1,0 +1,36 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-4">
+  <h3>Edit Profile</h3>
+  <form id="profileForm" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label class="form-label">Display Name</label>
+      <input type="text" class="form-control" name="displayName" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Bio</label>
+      <textarea class="form-control" name="bio"></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Location</label>
+      <input type="text" class="form-control" name="location">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Profile Picture</label>
+      <input type="file" class="form-control" name="profilePicture">
+    </div>
+    <button class="btn btn-primary" type="submit">Save Profile</button>
+  </form>
+</div>
+
+<script>
+document.getElementById('profileForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  fetch('/api/user/profile/update', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.ok ? alert('Profile updated!') : alert('Error updating profile'))
+});
+</script>
