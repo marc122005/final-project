@@ -379,6 +379,13 @@
 
         commentInput.value = '';
       }
+
+      function deletePost(index) {
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+        posts.splice(index, 1); // Remove the post at the specified index
+        localStorage.setItem('posts', JSON.stringify(posts)); // Update localStorage
+        window.location.reload(); // Refresh the page to reflect changes
+      }
     </script>
 </body>
 
