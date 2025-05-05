@@ -162,18 +162,36 @@
 .chat-input button:hover {
     background-color: #e03e00;
 }
-@media (max-width:996px){
+
+@media (max-width:996px) {
     .chat-sidebar {
         display: none;
     }
 }
-.footer{
+
+.footer {
     position: fixed;
     bottom: 20px;
     right: 255px;
     background-color: transparent;
     width: 300px;
 }
-.footer p{
+
+.footer p {
     font-size: 15px;
+}
+
+.posts-container .create {
+    background-color: var(--main-color);
+    border: none;
+    width: 100px;
+}
+
+.container h1 {
+    color: white;
+}
+
+#createPostForm button {
+    background-color: var(--main-color);
+    border: none;
 }
