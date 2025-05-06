@@ -60,34 +60,7 @@
         </form>
     </div>
 
-    <script>
-        function submitPost(event) {
-            event.preventDefault();
-
-            // Get form values
-            const title = document.getElementById("postTitle").value;
-            const content = document.getElementById("postContent").value;
-            const image = document.getElementById("postImage").value;
-
-            // Create a new post object with likes and comments
-            const newPost = {
-                title,
-                content,
-                image,
-                time: new Date().toLocaleString(),
-                likes: 0,
-                comments: [],
-            };
-
-            // Save post data to localStorage
-            const posts = JSON.parse(localStorage.getItem("posts")) || [];
-            posts.push(newPost);
-            localStorage.setItem("posts", JSON.stringify(posts));
-
-            // Redirect back to index.html
-            window.location.href = "index.html";
-        }
-    </script>
+    <script src="js/create-post.js"></script>
 </body>
 
 </html>
