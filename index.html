@@ -166,106 +166,13 @@
       </div>
       <hr>
     </div>
-
+    
     <div class="content mt-5 d-flex flex-row">
       <!-- postss -->
-      <div class="posts-container col-lg-9 d-flex flex-column justify-content-around ">
-        <button class="create btn btn-primary mb-3" onclick="window.location.href='create-post.html'">Create
+      <div class="posts-container col-lg-9 d-flex flex-column justify-content-around py-4 ">
+        <button class="create btn  " onclick="window.location.href='create-post.html'">Create
           Post</button>
-        <div class="post-card">
-          <div class="post-header">
-            <a href="#">
-              <img src="img/av1.png" alt="User Avatar" class="avatar">
-              <div>
-                <h3 class="username">John Doe</h3>
-                <p class="time">5 minutes ago</p>
-              </div>
-            </a>
-          </div>
-          <div class="post-content">
-            <p>This is a simple post example. It can contain text, images, links, or anything you want.</p>
-            <img src="img/img6jpg.jpg" alt="Post Image" class="post-image">
-          </div>
-          <div class="post-footer">
-            <button><i class="fa-solid fa-heart mx-2"></i>120</button>
-            <button><i class="fa-solid fa-comments mx-2"></i>Comment</button>
-            <button><i class="fa-solid fa-share mx-2"></i>Share</button>
-          </div>
-        </div>
-        <div class="post-card">
-          <div class="post-header">
-            <a href="#">
-              <img src="img/av2.png" alt="User Avatar" class="avatar">
-              <div>
-                <h3 class="username">John Doe</h3>
-                <p class="time">5 minutes ago</p>
-              </div>
-            </a>
-          </div>
-          <div class="post-content">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam, velit error quasi ullam placeat rerum
-              cum quas nostrum praesentium officia hic perferendis corrupti quia itaque, illum magni nam soluta
-              assumenda voluptates ipsum nesciunt nulla repellendus adipisci? Animi consectetur eveniet non dolores
-              enim. A maxime alias iure aliquid ratione, porro possimus dicta aliquam maiores. Necessitatibus eligendi
-              iusto, porro impedit quidem natus aperiam cum eaque? Accusamus voluptatem commodi incidunt, amet
-              perspiciatis nisi molestiae, voluptatibus, exercitationem beatae perferendis pariatur! Impedit fugiat,
-              itaque ipsam obcaecati non numquam laborum culpa est porro. Laudantium, repellat! Fugiat ipsam a
-              voluptatum aspernatur. Debitis totam, quos autem nostrum amet quis dolorem quas dolor ipsa, ex assumenda
-              aliquam nobis incidunt labore ullam. Deleniti, cumque reiciendis. Cupiditate officia delectus earum, optio
-              facilis fugiat quod sequi facere! Eveniet id modi officia temporibus, molestias maxime fuga
-              necessitatibus, dolores voluptas at repudiandae consequatur ad, atque quam reiciendis. Modi ipsam quo
-              voluptates, quisquam suscipit, at provident magni sed incidunt aliquam doloremque reiciendis quis nemo
-              commodi perspiciatis tenetur laudantium recusandae facere veniam. Ducimus, esse asperiores, labore at
-              velit voluptates assumenda doloremque modi nostrum aliquam totam sapiente omnis molestiae sed sit facere
-              dolores a corrupti maiores! Similique, tenetur maxime. Debitis ad quis fugiat accusamus laborum fuga
-              voluptates?</p>
-          </div>
-          <div class="post-footer">
-            <button><i class="fa-solid fa-heart mx-2"></i>120</button>
-            <button><i class="fa-solid fa-comments mx-2"></i>Comment</button>
-            <button><i class="fa-solid fa-share mx-2"></i>Share</button>
-          </div>
-        </div>
-        <div class="post-card">
-          <div class="post-header">
-            <a href="#">
-              <img src="img/av3.png" alt="User Avatar" class="avatar">
-              <div>
-                <h3 class="username">John Doe</h3>
-                <p class="time">5 minutes ago</p>
-              </div>
-            </a>
-          </div>
-          <div class="post-content">
-            <p>This is a simple post example. It can contain text, images, links, or anything you want.</p>
-            <img src="img/img7.jpg" alt="Post Image" class="post-image">
-          </div>
-          <div class="post-footer">
-            <button><i class="fa-solid fa-heart mx-2"></i>120</button>
-            <button><i class="fa-solid fa-comments mx-2"></i>Comment</button>
-            <button><i class="fa-solid fa-share mx-2"></i>Share</button>
-          </div>
-        </div>
-        <div class="post-card">
-          <div class="post-header">
-            <a href="#">
-              <img src="img/av5.png" alt="User Avatar" class="avatar">
-              <div>
-                <h3 class="username">John Doe</h3>
-                <p class="time">5 minutes ago</p>
-              </div>
-            </a>
-          </div>
-          <div class="post-content">
-            <p>This is a simple post example. It can contain text, images, links, or anything you want.</p>
-            <img src="img/img3.jpg" alt="Post Image" class="post-image">
-          </div>
-          <div class="post-footer">
-            <button><i class="fa-solid fa-heart mx-2"></i>120</button>
-            <button><i class="fa-solid fa-comments mx-2"></i>Comment</button>
-            <button><i class="fa-solid fa-share mx-2"></i>Share</button>
-          </div>
-        </div>
+        <!-- postes will added her dynamically  -->
       </div>
       <!-- chatbar and footer -->
       <div class="chatbar-footer  position-relative">
@@ -298,6 +205,22 @@
       </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/chatbar.js"></script>
     <!-- js of sharing postt -->
@@ -308,7 +231,7 @@
 
         posts.forEach((post, index) => {
           const postCard = document.createElement('div');
-          postCard.classList.add('post-card', 'position-relative'); 
+          postCard.classList.add('post-card', 'position-relative');
           postCard.innerHTML = `
             <button class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" onclick="deletePost(${index})"></button>
             <div class="post-header">
@@ -344,7 +267,7 @@
               </div>
             </div>
           `;
-          postsContainer.appendChild(postCard);
+          postsContainer.prepend(postCard); // Use prepend instead of appendChild
         });
       });
 

@@ -182,12 +182,25 @@
         display: none;
     }
 }
+.posts-container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
 .posts-container .create {
     background-color: var(--main-color);
     border: none;
     width: 100px;
+    position: absolute;
+    top: 0;
+    font-weight: 500;
+    color: white;
 }
-
+.create:hover {
+    background-color: #9b310b;
+}
 .container h1 {
     color: white;
 }
