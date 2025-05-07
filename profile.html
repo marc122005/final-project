@@ -121,26 +121,21 @@
     // Edit Profile button functionality
     const editProfileButton = document.querySelector(".btn-primary");
     editProfileButton.addEventListener("click", function () {
-      const username = prompt("Enter your new username:", "John Doe");
-      const email = prompt("Enter your new email:", "john.doe@example.com");
-      const profilePicture = prompt(
-        "Enter the URL of your new profile picture:",
-        "img/av1.png"
-      );
+      const username = "John Doe";
+      const email = "john.doe@example.com";
+      const profilePicture = "img/av1.png";
 
-      if (username && email && profilePicture) {
-        document.querySelector(".profile-header h2").textContent = username;
-        document.querySelector(".profile-header p").textContent = email;
-        document.querySelector(".profile-header img").src = profilePicture;
+      document.querySelector(".profile-header h2").textContent = username;
+      document.querySelector(".profile-header p").textContent = email;
+      document.querySelector(".profile-header img").src = profilePicture;
 
-        // Save updated profile to localStorage
-        const updatedProfile = {
-          username: username,
-          email: email,
-          profilePicture: profilePicture,
-        };
-        localStorage.setItem("selectedUserProfile", JSON.stringify(updatedProfile));
-      }
+      // Save updated profile to localStorage
+      const updatedProfile = {
+        username: username,
+        email: email,
+        profilePicture: profilePicture,
+      };
+      localStorage.setItem("selectedUserProfile", JSON.stringify(updatedProfile));
     });
   });
 </script>
