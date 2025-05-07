@@ -98,3 +98,49 @@
     </script>
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Follow/Unfollow button functionality
+    const followButton = document.createElement("button");
+    followButton.className = "btn btn-secondary mt-2";
+    followButton.textContent = "Follow";
+
+    followButton.addEventListener("click", function () {
+      if (followButton.textContent === "Follow") {
+        followButton.textContent = "Unfollow";
+        followButton.classList.replace("btn-secondary", "btn-danger");
+      } else {
+        followButton.textContent = "Follow";
+        followButton.classList.replace("btn-danger", "btn-secondary");
+      }
+    });
+
+    document.querySelector(".profile-header").appendChild(followButton);
+
+    // Edit Profile button functionality
+    const editProfileButton = document.querySelector(".btn-primary");
+    editProfileButton.addEventListener("click", function () {
+      const username = prompt("Enter your new username:", "John Doe");
+      const email = prompt("Enter your new email:", "john.doe@example.com");
+      const profilePicture = prompt(
+        "Enter the URL of your new profile picture:",
+        "img/av1.png"
+      );
+
+      if (username && email && profilePicture) {
+        document.querySelector(".profile-header h2").textContent = username;
+        document.querySelector(".profile-header p").textContent = email;
+        document.querySelector(".profile-header img").src = profilePicture;
+
+        // Save updated profile to localStorage
+        const updatedProfile = {
+          username: username,
+          email: email,
+          profilePicture: profilePicture,
+        };
+        localStorage.setItem("selectedUserProfile", JSON.stringify(updatedProfile));
+      }
+    });
+  });
+</script>
