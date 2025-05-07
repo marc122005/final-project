@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/create-poste.css">
+    <style>
+        /* Center the card on the page */
+        :root {
+            --background-color: #0e1113;
+            --foucs-color: #2a3236;
+            --hover-color: #181c1f;
+            --main-color: #ff4500;
+            --main-font: "Alegreya Sans", serif;
+        }
+
+        body {
+            background-color: var(--foucs-color);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Style the card */
+        .card {
+            width: 700px;
+            padding: 20px;
+            height: 500px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card ">
+        <h1 class="text-center mb-4">Create a New Post</h1>
+        <form id="createPostForm" onsubmit="submitPost(event)">
+            <div class="mb-3">
+                <label for="postTitle" class="form-label text-white">Post Title</label>
+                <input type="text" class="form-control" id="postTitle" placeholder="Enter post title"
+                    required />
+            </div>
+            <div class="mb-3">
+                <label for="postContent" class="form-label">Post Content</label>
+                <textarea class="form-control" id="postContent" rows="5" placeholder="Enter post content"
+                    required></textarea>
+            </div>
+            <div class="post-img mb-3">
+                <label for="postImage" class="form-label">Post Image URL</label>
+                <input type="url" class="form-control" id="postImage" placeholder="Enter image URL (optional)" />
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Post</button>
+        </form>
+    </div>
+
+    <script src="js/create-post.js"></script>
+</body>
+
+</html>
