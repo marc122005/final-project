@@ -143,4 +143,36 @@ body{
   .post p {
     font-size: 13px;
   }
+/* Follow/Unfollow Button Styling */
+.profile-header .follow-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-header .follow-btn:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.profile-header .unfollow-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.profile-header .unfollow-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
 }
