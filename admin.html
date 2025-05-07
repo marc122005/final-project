@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Winkly Admin Dashboard</title>
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+<body>
+
+  <div class="header">
+    <h1>Winkly Admin Dashboard</h1>
+    <p>Welcome, Admin!</p>
+  </div>
+
+  <div class="sidebar">
+    <a href="#">Statistics</a>
+    <a href="#">User Management</a>
+    <a href="#">Post Management</a>
+    <a href="#">Reports</a>
+    <a href="#">Logout</a>
+  </div>
+
+  <div class="main">
+    <div class="stats">
+      <div class="card">
+        <h2 id="users-count">0</h2>
+        <p>Total Users</p>
+      </div>
+      <div class="card">
+        <h2 id="posts-count">0</h2>
+        <p>Total Posts</p>
+      </div>
+      <div class="card">
+        <h2 id="reports-count">0</h2>
+        <p>Active Reports</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Latest Posts</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Content</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ahmed123</td>
+            <td>This is my first post!</td>
+            <td>2025-05-06</td>
+          </tr>
+          <tr>
+            <td>Laila2025</td>
+            <td>Has anyone tried the site?</td>
+            <td>2025-05-06</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('users-count').textContent = data.totalUsers;
+        document.getElementById('posts-count').textContent = data.totalPosts;
+        document.getElementById('reports-count').textContent = data.activeReports;
+      })
+      .catch(error => console.error('Error loading data:', error));
+  </script>
+
+</body>
+</html>
+
