@@ -9,7 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/profile.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -25,12 +25,43 @@
           height="150"
         />
         <h2 class="mt-3 text-white">John Doe</h2>
-        <p class="text-muted text-white">Software Developer | Tech Enthusiast</p>
-        <button class="btn btn-primary mt-2">Edit Profile</button>
+        <p class="text-muted text-white">
+          Software Developer | Tech Enthusiast
+        </p>
+        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit Profile</button>
+        
+        <!-- Edit Profile Modal -->
+        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="editProfileForm">
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="profilePicture" class="form-label">Profile Picture URL</label>
+                    <input type="url" class="form-control" id="profilePicture" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Profile Details -->
-      <div class="row ">
+      <div class="row">
         <div class="col-lg-4 mt-4">
           <div class="card mb-4">
             <div class="card-body">
@@ -73,5 +104,85 @@
     </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the selected user's profile from localStorage
+        const selectedUserProfile = JSON.parse(
+          localStorage.getItem("selectedUserProfile")
+        );
+
+        if (selectedUserProfile) {
+          // Populate profile page with the selected user's data
+          document.querySelector(".profile-header h2").textContent =
+            selectedUserProfile.username;
+          document.querySelector(".profile-header p").textContent =
+            selectedUserProfile.email;
+          document.querySelector(".profile-header img").src =
+            selectedUserProfile.profilePicture;
+    } else {
+      const editProfileForm = document.getElementById("editProfileForm");
+      editProfileForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const profilePicture = document.getElementById("profilePicture").value;
+
+        document.querySelector(".profile-header h2").textContent = username;
+        document.querySelector(".profile-header p").textContent = email;
+        if (profilePicture) {
+          document.querySelector(".profile-header img").src = profilePicture;
+        }
+
+        // Save updated profile to localStorage
+        const updatedProfile = {
+          username: username,
+          email: email,
+          profilePicture: profilePicture || "img/av1.png",
+        };
+        localStorage.setItem("selectedUserProfile", JSON.stringify(updatedProfile));
+
+        // Close the modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById("editProfileModal"));
+        modal.hide();
+      });
+    }
+
+    // Follow button functionality
+    const followButton = document.createElement("button");
+    followButton.className = "btn btn-secondary mt-2";
+    followButton.textContent = "Follow";
+
+    followButton.addEventListener("click", function () {
+      if (followButton.textContent === "Follow") {
+        followButton.textContent = "Unfollow";
+        followButton.classList.replace("btn-secondary", "btn-danger");
+      } else {
+        followButton.textContent = "Follow";
+        followButton.classList.replace("btn-danger", "btn-secondary");
+      }
+    });
+
+    document.querySelector(".profile-header").appendChild(followButton);
+
+    // Edit Profile button functionality
+    const editProfileButton = document.querySelector(".btn-primary");
+    editProfileButton.addEventListener("click", function () {
+      const username = "John Doe";
+      const email = "john.doe@example.com";
+      const profilePicture = "img/av1.png";
+
+      document.querySelector(".profile-header h2").textContent = username;
+      document.querySelector(".profile-header p").textContent = email;
+      document.querySelector(".profile-header img").src = profilePicture;
+
+      // Save updated profile to localStorage
+      const updatedProfile = {
+        username: username,
+        email: email,
+        profilePicture: profilePicture,
+      };
+      localStorage.setItem("selectedUserProfile", JSON.stringify(updatedProfile));
+    });
+  });
+</script>

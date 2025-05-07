@@ -89,9 +89,9 @@
     <div class="web-logo col-lg-2 col-md-2  col-sm-2 ">
       <a class="fs-2" href=""><i class="fa-brands fa-square-reddit"></i><span>Winkly</span> </a>
     </div>
-    <form class=" col-lg-4 col-md-4  col-sm-5" role="search ">
+    <form class="col-lg-4 col-md-4 col-sm-5" role="search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control me-2" type="search" id="searchInput" placeholder="Search for users..." aria-label="Search">
     </form>
     <ul
       class=" nav-ul d-flex my-1 col-lg-4 col-md-4 col-sm-3 text-capitalize justify-content-end align-content-center align-items-center">
@@ -105,10 +105,10 @@
         </a>
         <div class="menu-box">
           <ul class="d-flex flex-column gap-2 justify-content-evenly ">
-            <li><a class="px-2" href="#"><i class="fa-solid fa-right-from-bracket mx-2"></i>section1</a></li>
+            <li><a class="px-2" href="profile.html"><i class="fa-solid fa-user mx-2"></i>My Profile</a></li>
             <li><a class="px-2" href="#"><i class="fa-solid fa-chart-simple mx-2"></i>section2</a></li>
-            <li><a class="px-2" href="profile.html"><i class="fa-solid fa-user mx-2"></i>Profile</a></li>
-            <li><a class="px-2" href="#"><i class="fa-solid fa-basket-shopping mx-2"></i>section4</a></li>
+            <li><a class="px-2" href="#"><i class="fa-solid fa-user mx-2"></i>market</a></li>
+            <li><a class="px-2" href="#"><i class="fa-solid fa-right-from-bracket mx-2"></i>Log out</a></li>
           </ul>
         </div>
       </li>
@@ -169,7 +169,7 @@
     
     <div class="content mt-5 d-flex flex-row">
       <!-- postss -->
-      <div class="posts-container col-lg-9 d-flex flex-column justify-content-around py-4 ">
+      <div class="posts-container col-lg-9 d-flex flex-column justify-content-around py-4 text-white ">
         <button class="create btn  " onclick="window.location.href='create-post.html'">Create
           Post</button>
         <!-- postes will added her dynamically  -->
@@ -205,17 +205,10 @@
       </div>
     </div>
 
-
-
-
-
-
-
-
-
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/chatbar.js"></script>
     <script src="js/create-post.js"></script>
+    <script src="js/searchbar.js"></script>
 </body>
 
 </html>
