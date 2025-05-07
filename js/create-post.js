@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const postsContainer = document.querySelector(".posts-container");
     const posts = JSON.parse(localStorage.getItem("posts")) || [];
+    const userProfile = JSON.parse(localStorage.getItem("userProfile")); // Get user profile data
 
     posts.forEach((post, index) => {
         const postCard = document.createElement("div");
@@ -9,9 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="btn-close position-absolute top-0 end-0 m-2" aria-label="Close" onclick="deletePost(${index})"></button>
         <div class="post-header">
           <a href="#">
-            <img src="img/av1.png" alt="User Avatar" class="avatar">
+            <img src="${post.profilePicture || 'img/av1.png'}" alt="User Avatar" class="avatar">
             <div>
-              <h3 class="username">Anonymous</h3>
+              <h3 class="username">${post.username || 'Anonymous'}</h3>
               <p class="time">${post.time}</p>
             </div>
           </a>
@@ -23,24 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? `<img src="${post.image}" alt="Post Image" class="post-image">`
                 : ""
             }
-
         </div>
         <div class="post-footer">
           <button class="btn btn-light" onclick="likePost(${index})">
-            <i class="fa-solid fa-heart mx-2"></i><span id="like-count-${index}">${post.likes || 0
-            }</span>
+            <i class="fa-solid fa-heart mx-2"></i><span id="like-count-${index}">${post.likes || 0}</span>
           </button>
           <button class="btn btn-light" onclick="toggleCommentSection(${index})">
-            <i class="fa-solid fa-comments mx-2"></i><span id="comment-count-${index}">${post.comments?.length || 0
-            }</span>
+            <i class="fa-solid fa-comments mx-2"></i><span id="comment-count-${index}">${post.comments?.length || 0}</span>
           </button>
           <button class="btn btn-light"><i class="fa-solid fa-share mx-2"></i>Share</button>
         </div>
         <div class="comment-section" id="comment-section-${index}" style="display: none;">
           <div class="comments">
-            ${post.comments?.map((comment) => `<p>${comment}</p>`).join("") ||
-            ""
-            }
+            ${post.comments?.map((comment) => `<p>${comment}</p>`).join("") || ""}
           </div>
           <div class="comment-input mt-2">
             <input type="text" class="form-control" id="comment-input-${index}" placeholder="Write a comment...">
@@ -92,6 +88,7 @@ function deletePost(index) {
     localStorage.setItem("posts", JSON.stringify(posts)); // Update localStorage
     window.location.reload(); // Refresh the page to reflect changes
 }
+
 function submitPost(event) {
     event.preventDefault();
 
@@ -100,8 +97,13 @@ function submitPost(event) {
     const content = document.getElementById("postContent").value;
     const image = document.getElementById("postImage").value;
 
+    // Get user profile data
+    const userProfile = JSON.parse(localStorage.getItem("userProfile"));
+
     // Create a new post object with likes and comments
     const newPost = {
+        username: userProfile?.username || "Anonymous",
+        profilePicture: userProfile?.profilePicture || "img/av1.png",
         title,
         content,
         image,
