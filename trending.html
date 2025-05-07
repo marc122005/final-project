@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/trending.css">
+    <script src="js/trending.js" defer></script>
 </head>
-<body>
+
+
+
+    <body>
     
+          <div class="container">
+            <aside class="sidebar collapsed" id="sidebar">
+              <button id="toggleSidebar">☰</button>
+              <h2>MySocial</h2>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="category-link active" data-type="all">Trending</a></li>
+                <li><a href="#" class="category-link" data-type="sports">Sports</a></li>
+                <li><a href="#" class="category-link" data-type="fashion">Fashion</a></li>
+                <li><a href="#" class="category-link" data-type="music">Music</a></li>
+              </ul>
+            </aside>
+        
+            <main>
+              <header>
+                <h1 class="animated-title">Trending Now</h1>
+                <button id="refreshBtn">Refresh</button>
+              </header>
+        
+              <section id="trendingList"></section>
+            </main>
+          </div>
+        
 </body>
 </html>
+
