@@ -91,7 +91,8 @@
     </div>
     <form class="col-lg-4 col-md-4 col-sm-5" role="search">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input class="form-control me-2" type="search" id="searchInput" placeholder="Search for users..." aria-label="Search">
+      <input class="form-control me-2" type="search" id="searchInput" placeholder="Search for users..."
+        aria-label="Search">
     </form>
     <ul
       class=" nav-ul d-flex my-1 col-lg-4 col-md-4 col-sm-3 text-capitalize justify-content-end align-content-center align-items-center">
@@ -108,7 +109,7 @@
             <li><a class="px-2" href="profile.html"><i class="fa-solid fa-user mx-2"></i>My Profile</a></li>
             <li><a class="px-2 admin" href="admin.html"><i class="fa-solid fa-chart-simple mx-2"></i>Admin</a></li>
             <li><a class="px-2" href="#"><i class="fa-solid fa-user mx-2"></i>market</a></li>
-            <li><a class="px-2" href="#"><i class="fa-solid fa-right-from-bracket mx-2"></i>Log out</a></li>
+            <li><a class="px-2 logout" href="#"><i class="fa-solid fa-right-from-bracket mx-2"></i>Log out</a></li>
           </ul>
         </div>
       </li>
@@ -166,7 +167,7 @@
       </div>
       <hr>
     </div>
-    
+
     <div class="content mt-5 d-flex flex-row">
       <!-- postss -->
       <div class="posts-container col-lg-9 d-flex flex-column justify-content-around py-4 text-white ">
@@ -209,6 +210,49 @@
     <script src="js/chatbar.js"></script>
     <script src="js/create-post.js"></script>
     <script src="js/searchbar.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        const loginButton = document.querySelector(".log");
+        const logoutButton = document.querySelector(".menu-box ul li a.logout"); // Selector for the "Log Out" button
+        const adminLink = document.querySelector(".menu-box ul li a.admin"); // Selector for the "Admin" link
+
+        // Hide the login button if a user is logged in
+        if (loggedInUser) {
+          if (loginButton) {
+            loginButton.style.display = "none";
+          }
+
+          // Hide the "Admin" link if the logged-in user is not an admin
+          if (adminLink && loggedInUser.role !== "admin") {
+            adminLink.style.display = "none";
+          }
+        } else {
+          // If no user is logged in, ensure the "Admin" link is visible
+          if (adminLink) {
+            adminLink.style.display = "block";
+          }
+        }
+
+        // Add event listener to the "Log Out" button
+        if (logoutButton) {
+          logoutButton.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Clear the logged-in user from localStorage
+            localStorage.removeItem("loggedInUser");
+
+            // Show the login button
+            if (loginButton) {
+              loginButton.style.display = "inline-block";
+            }
+
+            // Optionally redirect to the login page
+            window.location.href = "login.html";
+          });
+        }
+      });
+    </script>
 </body>
 
 </html>

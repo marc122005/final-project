@@ -5,22 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet" />
-      
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="login">
-      <form action="">
+      <form id="loginForm">
         <h1 class="loginn">Login</h1>
         <div class="input-box">
-          <input type="text" placeholder="Username..." required />
+          <input type="text" id="username" placeholder="Username..." required />
           <i class="bx bxs-user"></i>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Password..." required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password..."
+            required
+          />
           <i class="bx bxs-lock-alt"></i>
         </div>
         <div class="remember-forget">
@@ -31,9 +40,49 @@
 
         <div class="register-link">
           <p>Don't have an account? <a href="register.html">Register</a></p>
-          <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
         </div>
       </form>
     </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Get user input values
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          // Define admin and user accounts
+          const adminAccount = {
+            username: "admin",
+            password: "admin123",
+            role: "admin",
+          };
+          const userAccount = {
+            username: "user",
+            password: "user123",
+            role: "user",
+          };
+
+          // Check if the entered credentials match the admin or user account
+          if (
+            username === adminAccount.username &&
+            password === adminAccount.password
+          ) {
+            localStorage.setItem("loggedInUser", JSON.stringify(adminAccount));
+            window.location.href = "admin.html"; // Redirect to admin page
+          } else if (
+            username === userAccount.username &&
+            password === userAccount.password
+          ) {
+            localStorage.setItem("loggedInUser", JSON.stringify(userAccount));
+            window.location.href = "profile.html"; // Redirect to user profile page
+          } else {
+            alert("Invalid username or password. Please try again.");
+          }
+        });
+    </script>
   </body>
 </html>
