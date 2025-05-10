@@ -56,7 +56,14 @@ h1 {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
-
+.card .img-movies{
+    width: 100% ;
+    height: 400px;
+}
+.card .img-gaming{
+    width: 100%;
+    height: 400px;
+}
 .card img {
     width: 100%;
     height: 200px;
