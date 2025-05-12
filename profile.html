@@ -42,6 +42,17 @@
           Edit Profile
         </button>
 
+        <div class="d-flex justify-content-center mt-3">
+          <button
+            class="btn btn-warning me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#reportModal"
+          >
+            Report
+          </button>
+          <button class="btn btn-danger" id="blockButton">Block</button>
+        </div>
+
         <!-- Edit Profile Modal -->
         <div
           class="modal fade"
@@ -146,61 +157,126 @@
       </div>
     </div>
 
+    <!-- Report Modal -->
+    <div
+      class="modal fade"
+      id="reportModal"
+      tabindex="-1"
+      aria-labelledby="reportModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="reportModalLabel">Report User</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="reportForm">
+              <div class="mb-3">
+                <label for="reportReason" class="form-label">Reason</label>
+                <select class="form-select" id="reportReason" required>
+                  <option value="" disabled selected>Select a reason</option>
+                  <option value="spam">Spam</option>
+                  <option value="harassment">Harassment</option>
+                  <option value="inappropriate">Inappropriate Content</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="additionalDetails" class="form-label"
+                  >Additional Details (optional)</label
+                >
+                <textarea
+                  class="form-control"
+                  id="additionalDetails"
+                  rows="3"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-warning">Submit Report</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Get the selected user's profile from localStorage
-        const selectedUserProfile = JSON.parse(
+        // Fallback to default profile if none exists
+        let selectedUserProfile = JSON.parse(
           localStorage.getItem("selectedUserProfile")
         );
-
-        if (selectedUserProfile) {
-          // Populate profile page with the selected user's data
-          document.querySelector(".profile-header h2").textContent =
-            selectedUserProfile.username;
-          document.querySelector(".profile-header p").textContent =
-            selectedUserProfile.email;
-          document.querySelector(".profile-header img").src =
-            selectedUserProfile.profilePicture;
-        } else {
-          const editProfileForm = document.getElementById("editProfileForm");
-          editProfileForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const email = document.getElementById("email").value;
-            const profilePicture =
-              document.getElementById("profilePicture").value;
-
-            document.querySelector(".profile-header h2").textContent = username;
-            document.querySelector(".profile-header p").textContent = email;
-            if (profilePicture) {
-              document.querySelector(".profile-header img").src =
-                profilePicture;
-            }
-
-            // Save updated profile to localStorage
-            const updatedProfile = {
-              username: username,
-              email: email,
-              profilePicture: profilePicture || "img/av1.png",
-            };
-            localStorage.setItem(
-              "selectedUserProfile",
-              JSON.stringify(updatedProfile)
-            );
-
-            // Close the modal
-            const modal = bootstrap.Modal.getInstance(
-              document.getElementById("editProfileModal")
-            );
-            modal.hide();
-          });
+        if (!selectedUserProfile) {
+          selectedUserProfile = {
+            username: "John Doe",
+            email: "john.doe@example.com",
+            profilePicture: "img/av1.png",
+          };
+          localStorage.setItem(
+            "selectedUserProfile",
+            JSON.stringify(selectedUserProfile)
+          );
         }
+
+        // Populate profile header
+        document.querySelector(".profile-header h2").textContent =
+          selectedUserProfile.username;
+        document.querySelector(".profile-header p").textContent =
+          selectedUserProfile.email;
+        document.querySelector(".profile-header img").src =
+          selectedUserProfile.profilePicture;
+
+        // Edit Profile button click: pre-fill modal
+        const editProfileButton = document.querySelector(".btn-primary");
+        editProfileButton.addEventListener("click", function () {
+          document.getElementById("username").value = selectedUserProfile.username;
+          document.getElementById("email").value = selectedUserProfile.email;
+          document.getElementById("profilePicture").value =
+            selectedUserProfile.profilePicture;
+        });
+
+        // Handle Edit Profile form submit
+        const editProfileForm = document.getElementById("editProfileForm");
+        editProfileForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const email = document.getElementById("email").value;
+          const profilePicture = document.getElementById("profilePicture").value;
+
+          const updatedProfile = {
+            username,
+            email,
+            profilePicture: profilePicture || "img/av1.png",
+          };
+
+          localStorage.setItem(
+            "selectedUserProfile",
+            JSON.stringify(updatedProfile)
+          );
+
+          // Update UI
+          document.querySelector(".profile-header h2").textContent = username;
+          document.querySelector(".profile-header p").textContent = email;
+          document.querySelector(".profile-header img").src =
+            updatedProfile.profilePicture;
+
+          // Close modal
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("editProfileModal")
+          );
+          modal.hide();
+        });
 
         // Follow button functionality
         const followButton = document.createElement("button");
-        followButton.className = "btn btn-secondary mt-2 ";
+        followButton.className = "btn btn-secondary mt-2";
         followButton.textContent = "Follow";
 
         followButton.addEventListener("click", function () {
@@ -215,27 +291,31 @@
 
         document.querySelector(".profile-header").appendChild(followButton);
 
-        // Edit Profile button functionality
-        const editProfileButton = document.querySelector(".btn-primary");
-        editProfileButton.addEventListener("click", function () {
-          const username = "John Doe";
-          const email = "john.doe@example.com";
-          const profilePicture = "img/av1.png";
+        // Report form submit
+        const reportForm = document.getElementById("reportForm");
+        reportForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          const reason = document.getElementById("reportReason").value;
+          const details = document.getElementById("additionalDetails").value;
 
-          document.querySelector(".profile-header h2").textContent = username;
-          document.querySelector(".profile-header p").textContent = email;
-          document.querySelector(".profile-header img").src = profilePicture;
+          console.log("Report Submitted:", { reason, details });
 
-          // Save updated profile to localStorage
-          const updatedProfile = {
-            username: username,
-            email: email,
-            profilePicture: profilePicture,
-          };
-          localStorage.setItem(
-            "selectedUserProfile",
-            JSON.stringify(updatedProfile)
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("reportModal")
           );
+          modal.hide();
+
+          alert("Thank you for your report. We will review it shortly.");
+        });
+
+        // Block user
+        const blockButton = document.getElementById("blockButton");
+        blockButton.addEventListener("click", function () {
+          const confirmation = confirm("Are you sure you want to block this user?");
+          if (confirmation) {
+            alert("User has been blocked.");
+            // Add backend or UI logic here
+          }
         });
       });
     </script>
