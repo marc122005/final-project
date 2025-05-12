@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,33 +10,96 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-
-    <style>
-      .back-arrow {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        background-color: #f8f9fa;
-        border: none;
-        border-radius: 50%;
-        padding: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .back-arrow:hover {
-        background-color: #e9ecef;
-      }
-
-      .back-arrow i {
-        font-size: 16px;
-        color: #333;
-      }
-    </style>
   </head>
   <body>
-    <!-- Back Arrow Button -->
+    <button class="back-arrow" onclick="goBackToHome()">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <div class="header">
+      <h1>Winkly Admin Dashboard</h1>
+      <p>Welcome, Admin!</p>
+    </div>
+
+    <div class="sidebar">
+      <a href="#">Statistics</a>
+      <a href="#">User Management</a>
+      <a href="#">Post Management</a>
+      <a href="#">Reports</a>
+      <a href="#">Logout</a>
+    </div>
+
+    <div class="main">
+      <div class="stats">
+        <div class="card">
+          <h2 id="users-count">0</h2>
+          <p>Total Users</p>
+        </div>
+        <div class="card">
+          <h2 id="posts-count">0</h2>
+          <p>Total Posts</p>
+        </div>
+        <div class="card">
+          <h2 id="reports-count">0</h2>
+          <p>Active Reports</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Latest Posts</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Content</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ahmed123</td>
+              <td>This is my first post!</td>
+              <td>2025-05-06</td>
+              <td><button onclick="inspectPost(1)" class="inspect-btn">Inspect</button></td>
+            </tr>
+            <tr>
+              <td>Laila2025</td>
+              <td>Has anyone tried the site?</td>
+              <td>2025-05-06</td>
+              <td><button onclick="inspectPost(2)" class="inspect-btn">Inspect</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function goBackToHome() {
+        window.location.href = "index.html";
+      }
+
+      function inspectPost(postId) {
+        alert(`Inspecting post with ID: ${postId}`);
+      }
+    </script>
+  </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winkly Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
     <button class="back-arrow" onclick="goBackToHome()">
       <i class="fa-solid fa-arrow-left"></i>
     </button>
@@ -96,7 +160,6 @@
     </div>
 
     <script>
-      // Function to redirect to the home page
       function goBackToHome() {
         window.location.href = "index.html";
       }
