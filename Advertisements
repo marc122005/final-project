@@ -1,0 +1,15 @@
+<div class="ads-section">
+  <h3>Advertisements</h3>
+
+  <div class="ad-box">
+    <img src="https://via.placeholder.com/300x100?text=Ad+1" alt="Ad 1">
+  </div>
+
+  <div class="ad-box">
+    <img src="https://via.placeholder.com/300x100?text=Ad+2" alt="Ad 2">
+  </div>
+
+  <div class="ad-box">
+    <p>Sign up now for our free course!</p>
+  </div>
+</div>

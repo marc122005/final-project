@@ -299,3 +299,87 @@ nav ul .points .menu-box li a:hover {
   color: #6c757d; /* Muted text color */
   font-size: 14px;
 }
+
+/* Advertisements Section Styles */
+.advertisements-section {
+  padding: 15px;
+  background-color: var(--foucs-color);
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.advertisements-section h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ad-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ad-item {
+  background-color: var(--hover-color);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ad-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.ad-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.ad-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.ad-item:hover img {
+  transform: scale(1.05);
+}
+
+.ad-text {
+  color: #ffffff;
+  padding: 12px;
+  margin: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.ad-item:hover .ad-text {
+  background-color: var(--main-color);
+}
+
+/* Responsive styles for advertisements */
+@media (max-width: 768px) {
+  .advertisements-section {
+    margin: 15px 0;
+    padding: 10px;
+  }
+
+  .ad-container {
+    gap: 15px;
+  }
+
+  .ad-text {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
