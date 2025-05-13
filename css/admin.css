@@ -108,6 +108,85 @@ th {
 }
 
 
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.add-post-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-post-btn:hover {
+    background-color: #218838;
+}
+
+
+.action-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.action-btn.edit {
+    color: #007bff;
+}
+
+.action-btn.delete {
+    color: #dc3545;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
+
+
+.sidebar a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
 @media screen and (max-width: 1024px) {
     .stats .card {
         min-width: 200px;
@@ -143,6 +222,21 @@ th {
     .back-arrow {
         top: 10px;
         left: 10px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .add-post-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
@@ -192,6 +286,7 @@ body {
     top: 60px;
     bottom: 0;
     padding: 20px 10px;
+    z-index: 1000;
 }
 
 .sidebar a {
@@ -204,6 +299,7 @@ body {
 .main {
     margin-left: 220px;
     padding: 20px;
+    transition: margin 0.3s ease;
 }
 
 .card {
@@ -279,7 +375,90 @@ th {
     background-color: #0056b3;
 }
 
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Card Header Styles */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.add-post-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.add-post-btn:hover {
+    background-color: #218838;
+}
+
+/* Action Buttons Styles */
+.action-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.action-btn.edit {
+    color: #007bff;
+}
+
+.action-btn.delete {
+    color: #dc3545;
+}
+
+.action-btn:hover {
+    opacity: 0.8;
+}
+
+/* Sidebar Icons */
+.sidebar a i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
 /* Responsive Design */
+
 @media screen and (max-width: 1024px) {
     .stats .card {
         min-width: 200px;
@@ -296,6 +475,7 @@ th {
 
     .main {
         margin-left: 0;
+        padding: 15px;
     }
 
     .stats {
@@ -315,6 +495,21 @@ th {
     .back-arrow {
         top: 10px;
         left: 10px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .add-post-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
