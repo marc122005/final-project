@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Poll Survey</title>
+  <!-- ربط ملف الـ CSS -->
+  <link rel="stylesheet" href="css/pull.css">
+</head>
+<body>
+  <h1>Polls & Surveys</h1>
+
+  <!-- قسم إنشاء الاستطلاع -->
+  <div id="create-poll">
+    <h2>Create a new Poll</h2>
+    <form id="poll-form">
+      <label for="question">Enter your question:</label>
+      <input type="text" id="question" placeholder="What is your favorite color?" required>
+
+      <div id="options-container">
+        <label for="option1">Option 1:</label>
+        <input type="text" class="option" id="option1" placeholder="e.g. Blue" required>
+
+        <label for="option2">Option 2:</label>
+        <input type="text" class="option" id="option2" placeholder="e.g. Red" required>
+      </div>
+
+      <button type="button" id="add-option">Add Option</button>
+      <button type="submit">Create Poll</button>
+    </form>
+  </div>
+
+  <!-- عرض الاستطلاعات المتاحة -->
+  <h2>Available Polls</h2>
+  <div id="poll-list"></div>
+
+  <!-- ربط ملف الـ JavaScript -->
+  <script src="pull.js"></script>
+</body>
+</html>
