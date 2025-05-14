@@ -310,11 +310,19 @@
 
         // Block user
         const blockButton = document.getElementById("blockButton");
+        let isBlocked = false; // Track blocked state
         blockButton.addEventListener("click", function () {
-          const confirmation = confirm("Are you sure you want to block this user?");
+          const action = isBlocked ? "unblock" : "block";
+          const confirmation = confirm(`Are you sure you want to ${action} this user?`);
           if (confirmation) {
-            alert("User has been blocked.");
-            // Add backend or UI logic here
+            isBlocked = !isBlocked;
+            blockButton.textContent = isBlocked ? "Unblock" : "Block";
+            alert(`User has been ${action}ed.`);
+            if (isBlocked) {
+              blockButton.classList.replace("btn-danger", "btn-secondary");
+            } else {
+              blockButton.classList.replace("btn-secondary", "btn-danger");
+            }
           }
         });
       });
