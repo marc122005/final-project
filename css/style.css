@@ -258,7 +258,7 @@ nav ul .points .menu-box li a:hover {
 
 /* Search Results Container */
 #searchResults {
-  display: none; /* Hidden by default */
+  display: none; 
   background-color: #f8f9fa;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -272,114 +272,28 @@ nav ul .points .menu-box li a:hover {
 }
 
 #searchResults.active {
-  display: block; /* Show when active */
+  display: block; 
 }
 
 /* Individual Search Result */
 #searchResults div {
-  padding: 8px 10px; /* Add padding for spacing */
-  border-bottom: 1px solid #ddd; /* Separate results */
-  cursor: pointer; /* Indicate clickable items */
-  transition: background-color 0.2s ease; /* Smooth hover effect */
+  padding: 8px 10px; 
+  border-bottom: 1px solid #ddd; 
+  cursor: pointer;
+  transition: background-color 0.2s ease; 
 }
 
 #searchResults div:last-child {
-  border-bottom: none; /* Remove border for the last item */
+  border-bottom: none; 
 }
 
-/* Hover Effect for Search Results */
 #searchResults div:hover {
-  background-color: #e9ecef; /* Light gray hover effect */
+  background-color: #e9ecef; 
 }
 
-/* No Results Message */
 #searchResults p {
   margin: 0;
   padding: 8px 10px;
-  color: #6c757d; /* Muted text color */
+  color: #6c757d; 
   font-size: 14px;
-}
-
-/* Advertisements Section Styles */
-.advertisements-section {
-  padding: 15px;
-  background-color: var(--foucs-color);
-  border-radius: 8px;
-  margin: 20px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.advertisements-section h3 {
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.ad-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.ad-item {
-  background-color: var(--hover-color);
-  border-radius: 6px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.ad-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.ad-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.ad-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.ad-item:hover img {
-  transform: scale(1.05);
-}
-
-.ad-text {
-  color: #ffffff;
-  padding: 12px;
-  margin: 0;
-  text-align: center;
-  font-size: 0.9rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.ad-item:hover .ad-text {
-  background-color: var(--main-color);
-}
-
-/* Responsive styles for advertisements */
-@media (max-width: 768px) {
-  .advertisements-section {
-    margin: 15px 0;
-    padding: 10px;
-  }
-
-  .ad-container {
-    gap: 15px;
-  }
-
-  .ad-text {
-    font-size: 0.8rem;
-    padding: 8px;
-  }
 }
