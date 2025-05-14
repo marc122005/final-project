@@ -6,10 +6,20 @@ document.getElementById("languageSelect").addEventListener("change", function(ev
     // تغيير النصوص للعربية
     document.querySelector(".get").textContent = "احصل على التطبيق";
     document.querySelector(".log").textContent = "تسجيل الدخول";
-    document.querySelector(".px-2 i").textContent = "الملف الشخصي";
+    document.querySelector(".my-profile").textContent = "الملف الشخصي";
     document.querySelector(".admin").textContent = "الإدارة";
-    document.querySelector(".px-2 a[href='privacy.html']").textContent = "إعدادات الخصوصية";
     document.querySelector(".logout").textContent = "تسجيل الخروج";
+    document.querySelector(".privacy").textContent = " الاعددات الخصوصية";
+     // sidebar 
+    document.querySelector(".home").textContent = "الصفحه الرئيسية";
+    document.querySelector(".popular").textContent = "الأكثر شيوعاً";
+    document.querySelector(".menu").textContent = "القائمه";
+    document.querySelector(".trending").textContent = "الأكثر تداولا";
+    document.querySelector(".poll").textContent = "استطلاع";
+    document.querySelector(".categories").textContent = "الأقسام";
+    document.querySelector(".technology").textContent = "التكنولوجيا";
+    document.querySelector(".gaming").textContent = "الألعاب";
+    document.querySelector(".movies").textContent = "الأفلام";
   } else {
     // تغيير النصوص إلى الإنجليزية
     document.querySelector(".get").textContent = "get app";
