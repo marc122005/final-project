@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en"></html>
+
 
 <head>
   <meta charset="UTF-8">
@@ -12,6 +14,10 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/create-poste.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lang.css">
+
+
+  
 </head>
 
 <body>
@@ -101,7 +107,13 @@
             <li><a class="px-2 admin" href="admin.html"><i class="fa-solid fa-chart-simple mx-2"></i>Admin</a></li>
             <li><a class="px-2" href="privacy.html"><i class="fa-solid fa-user mx-2"></i>Privacy settings</a></li>
             <li><a class="px-2 logout" href="#"><i class="fa-solid fa-right-from-bracket mx-2"></i>Log out</a></li>
-              
+                  <li class="px-2">
+      <i class="fa-solid fa-globe mx-2"></i>
+<select id="language-select">
+  <option value="en">English</option>
+  <option value="ar">Arabic</option>
+</select>
+
     </li>
 
           </ul>
@@ -198,7 +210,8 @@
     <script src="js/chatbar.js"></script>
     <script src="js/create-post.js"></script>
     <script src="js/searchbar.js"></script>
-    <script src="js/language.js"></script>
+   
+    
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
@@ -243,6 +256,8 @@
       });
 
     </script>
+    
+
 </body>
 
 </html>
