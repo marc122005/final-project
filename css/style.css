@@ -143,7 +143,7 @@ nav ul .points:hover {
 
 nav .nav-ul .menu-box {
   width: 250px;
-  height: 200px;
+  height: 230px;
   position: absolute;
   top: -300px;
   right: 20px;
@@ -226,7 +226,11 @@ nav ul .points .menu-box li a:hover {
 
 /* Search Results */
 #searchResults {
+<<<<<<< HEAD
   display: none;
+=======
+  display: none; 
+>>>>>>> 6ba87647176b48b58f0a7f2ddbc2b87ccc77473d
   background-color: #f8f9fa;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -240,10 +244,15 @@ nav ul .points .menu-box li a:hover {
 }
 
 #searchResults.active {
+<<<<<<< HEAD
   display: block;
+=======
+  display: block; 
+>>>>>>> 6ba87647176b48b58f0a7f2ddbc2b87ccc77473d
 }
 
 #searchResults div {
+<<<<<<< HEAD
   padding: 8px 10px;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
@@ -256,11 +265,26 @@ nav ul .points .menu-box li a:hover {
 
 #searchResults div:hover {
   background-color: #e9ecef;
+=======
+  padding: 8px 10px; 
+  border-bottom: 1px solid #ddd; 
+  cursor: pointer;
+  transition: background-color 0.2s ease; 
+}
+
+#searchResults div:last-child {
+  border-bottom: none; 
+}
+
+#searchResults div:hover {
+  background-color: #e9ecef; 
+>>>>>>> 6ba87647176b48b58f0a7f2ddbc2b87ccc77473d
 }
 
 #searchResults p {
   margin: 0;
   padding: 8px 10px;
+<<<<<<< HEAD
   color: #6c757d;
   font-size: 14px;
 }
@@ -405,3 +429,8 @@ nav ul .points .menu-box li a:hover {
     padding: 8px;
   }
 }
+=======
+  color: #6c757d; 
+  font-size: 14px;
+}
+>>>>>>> 6ba87647176b48b58f0a7f2ddbc2b87ccc77473d
