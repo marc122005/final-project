@@ -244,7 +244,6 @@
         const loginButton = document.querySelector(".log");
         const logoutButton = document.querySelector(".menu-box ul li a.logout");
         const adminLink = document.querySelector(".menu-box ul li a.admin");
-
         // Hide the login button if a user is logged in OR just signed up
         if (loggedInUser || userProfile) {
           if (loginButton) {
@@ -255,7 +254,6 @@
             loginButton.style.display = "inline-block";
           }
         }
-
         // Hide the "Admin" link if the logged-in user is not an admin
         if (loggedInUser) {
           if (adminLink && loggedInUser.role !== "admin") {
