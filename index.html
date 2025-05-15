@@ -15,7 +15,9 @@
 </head>
 
 <body>
+<!--navbar-->
   <nav class="d-flex align-content-center align-items-center justify-content-between  ">
+      <!--sidbar if screen smaller than 1200px-->
     <nav class="navbar sid-smal  col-lg-2 col-md-2 col-sm-2  navbar-dark ">
       <div class="container-fluid">
         <button class="navbar-toggl bg-transparent border-0 w-50" type="button" data-bs-toggle="offcanvas"
@@ -83,9 +85,11 @@
         </div>
       </div>
     </nav>
+    <!--logo-->
     <div class="web-logo col-lg-2 col-md-2  col-sm-2 ">
       <a class="fs-2" href=""><i class="fa-brands fa-square-reddit"></i><span>Winkly</span> </a>
     </div>
+        <!--search bar-->
     <form class="col-lg-4 col-md-4 col-sm-5" role="search">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input class="form-control me-2" type="search" id="searchInput" placeholder="Search for users..."
@@ -95,7 +99,7 @@
       class="nav-ul d-flex my-1 col-lg-4 col-md-4 col-sm-3 text-capitalize justify-content-end align-content-center align-items-center">
       <li><a class="get mx-1" href="getApp.html"><i class="fa-solid fa-qrcode mx-2"></i>get app</a></li>
       <li><a class="log mx-1" href="login.html">log in</a></li>
-      <!-- Notification Icon placed after login button -->
+      <!-- Notification button -->
       <li class="notification mx-1 position-relative">
         <a href="#" class="d-flex align-items-center">
           <i class="fa-solid fa-bell"></i>
@@ -105,6 +109,7 @@
           </span>
         </a>
       </li>
+      <!-- small menu -->
       <li class="points ">
         <a class="d-flex justify-content-center align-items-center" href="#">
           <span>.</span>
@@ -129,7 +134,11 @@
       </li>
     </ul>
   </nav>
+  <!--end-navbar-->
+
+  <!--sidebar and content-->
   <div class="sidebar-content d-flex">
+      <!--sidebar-->
     <div class="sidebar my-5">
       <div class="menu-item"><a class="home" href="#"><i class="fa-solid fa-house px-2"></i>home</a></div>
       <div class="menu-item"><a class="popular" href="#"><i class="fa-solid fa-arrow-up-right-dots px-2"></i>popular</a></div>
@@ -177,6 +186,7 @@
       </div>
       <hr>
     </div>
+    <!--end-sidebar-->
 
     <div class="content mt-5 d-flex flex-row">
       <!-- postss -->
@@ -224,22 +234,28 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        const userProfile = JSON.parse(localStorage.getItem("userProfile"));
         const loginButton = document.querySelector(".log");
-        const logoutButton = document.querySelector(".menu-box ul li a.logout"); // Selector for the "Log Out" button
-        const adminLink = document.querySelector(".menu-box ul li a.admin"); // Selector for the "Admin" link
+        const logoutButton = document.querySelector(".menu-box ul li a.logout");
+        const adminLink = document.querySelector(".menu-box ul li a.admin");
 
-        // Hide the login button if a user is logged in
-        if (loggedInUser) {
+        // Hide the login button if a user is logged in OR just signed up
+        if (loggedInUser || userProfile) {
           if (loginButton) {
             loginButton.style.display = "none";
           }
+        } else {
+          if (loginButton) {
+            loginButton.style.display = "inline-block";
+          }
+        }
 
-          // Hide the "Admin" link if the logged-in user is not an admin
+        // Hide the "Admin" link if the logged-in user is not an admin
+        if (loggedInUser) {
           if (adminLink && loggedInUser.role !== "admin") {
             adminLink.style.display = "none";
           }
         } else {
-          // If no user is logged in, ensure the "Admin" link is visible
           if (adminLink) {
             adminLink.style.display = "block";
           }
@@ -249,21 +265,15 @@
         if (logoutButton) {
           logoutButton.addEventListener("click", function (event) {
             event.preventDefault();
-
-            // Clear the logged-in user from localStorage
             localStorage.removeItem("loggedInUser");
-
-            // Show the login button
+            localStorage.removeItem("userProfile");
             if (loginButton) {
               loginButton.style.display = "inline-block";
             }
-
-            // Optionally redirect to the login page
             window.location.href = "login.html";
           });
         }
       });
-
     </script>
 </body>
 
