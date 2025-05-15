@@ -92,12 +92,22 @@
         aria-label="Search">
     </form>
     <ul
-      class=" nav-ul d-flex my-1 col-lg-4 col-md-4 col-sm-3 text-capitalize justify-content-end align-content-center align-items-center">
+      class="nav-ul d-flex my-1 col-lg-4 col-md-4 col-sm-3 text-capitalize justify-content-end align-content-center align-items-center">
       <li><a class="get mx-1" href="getApp.html"><i class="fa-solid fa-qrcode mx-2"></i>get app</a></li>
       <li><a class="log mx-1" href="login.html">log in</a></li>
+      <!-- Notification Icon placed after login button -->
+      <li class="notification mx-1 position-relative">
+        <a href="#" class="d-flex align-items-center">
+          <i class="fa-solid fa-bell"></i>
+          <span class="badge position-absolute top-0 start-100 translate-middle bg-danger text-white rounded-circle"
+            style="font-size: 0.75rem; min-width: 20px; height: 20px; display: flex; justify-content: center; align-items: center;">
+            3
+          </span>
+        </a>
+      </li>
       <li class="points ">
         <a class="d-flex justify-content-center align-items-center" href="#">
-          <span>.</span>  
+          <span>.</span>
           <span>.</span>
           <span>.</span>
         </a>
@@ -107,7 +117,6 @@
             <li><a class="px-2 admin" href="admin.html"><i class="fa-solid fa-chart-simple mx-2"></i>Admin</a></li>
             <li><a class="px-2 privacy" href="privacy.html"><i class="fa-solid fa-user mx-2"></i>Privacy settings</a></li>
             <li><a class="px-2 logout" href="#"><i class="fa-solid fa-right-from-bracket mx-2"></i>Log out</a></li>
-
             <li class="px-2">
               <i class="fa-solid fa-globe mx-2"></i>
               <select id="languageSelect" class="form-select" style="width: auto; display: inline-block;">
