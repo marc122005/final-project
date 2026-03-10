@@ -72,13 +72,13 @@
             password === adminAccount.password
           ) {
             localStorage.setItem("loggedInUser", JSON.stringify(adminAccount));
-            window.location.href = "admin.html"; 
+            window.location.href = "admin.html"; // Redirect to admin page
           } else if (
             username === userAccount.username &&
             password === userAccount.password
           ) {
             localStorage.setItem("loggedInUser", JSON.stringify(userAccount));
-            window.location.href = "profile.html"; 
+            window.location.href = "profile.html"; // Redirect to user profile page
           } else {
             alert("Invalid username or password. Please try again.");
           }
